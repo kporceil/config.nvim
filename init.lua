@@ -2,4 +2,5 @@
 require("config.lazy")
 vim.cmd([[
 set noexpandtab
+nmap <F1><nop>
 ]])

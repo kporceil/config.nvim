@@ -4,7 +4,8 @@ return {
     version = "*",
     config = true,
     keys = {
-      { "<leader>td", "<cmd>ToggleTerm<cr>", desc = "open terminal" },
+      { "<leader>tv", "<cmd>ToggleTerm direction=vertical<cr>", desc = "open vertical terminal" },
+      { "<leader>th", "<cmd>ToggleTerm direction=horizontal<cr>", desc = "open horizontal terminal" },
     },
   },
 }
