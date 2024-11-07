@@ -1,6 +1,6 @@
 return {
   {
-    "Natox10/ftcountline.nvim",
+    "kporceil/ftcountline.nvim",
     opts = {
       auto_update = true,
     },

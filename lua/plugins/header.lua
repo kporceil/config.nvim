@@ -1,5 +1,5 @@
 return {
-  "Diogo-ss/42-header.nvim",
+  "kporceil/42lyon-header.nvim",
   cmd = { "Stdheader" },
   keys = { "<F1>" },
   opts = {
