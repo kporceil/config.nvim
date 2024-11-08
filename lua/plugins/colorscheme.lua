@@ -7,6 +7,7 @@ return {
   { "rebelot/kanagawa.nvim" },
   { "olivercederborg/poimandres.nvim" },
   { "xero/miasma.nvim" },
+  { "kepano/flexoki-neovim" },
 
   -- Configure LazyVim to load gruvbox
   {

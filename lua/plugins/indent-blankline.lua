@@ -3,5 +3,4 @@ return {
   tag = "v3.8.2",
   enabled = true,
   main = "ibl",
-  opts = {},
 }
