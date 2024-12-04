@@ -24,6 +24,19 @@ return {
   opts = {
     highlight = { enable = true, disable = { "zsh" } },
     indent = { enable = true },
+    rainbow = {
+      enable = true,
+      extended_mode = true, -- Colore aussi les HTML tags
+      max_file_lines = nil, -- Pas de limite de lignes
+      colors = {
+        "#ff79c6",
+        "#bd93f9",
+        "#50fa7b",
+        "#f1fa8c",
+        "#8be9fd",
+        "#ffb86c",
+      },
+    },
     ensure_installed = {
       "cpp",
       "rust",
