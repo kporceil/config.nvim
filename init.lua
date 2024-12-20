@@ -6,7 +6,18 @@ set tabstop=4
 set shiftwidth=4
 nmap <F1><nop>
 set colorcolumn=80
+set path+=**,/usr/lib/gcc/x86_64-linux-gnu/12/include/,/usr/include,/usr/local/include,/usr/include/x86_64-linux-gnu/,./includes/
 ]])
+
+require("lsp_signature").setup({
+  bind = true, -- Associe l'affichage de la signature au buffer
+  floating_window = true, -- Active la fenêtre flottante pour afficher la signature
+  hint_enable = true, -- Active l'affichage des indices (hint)
+  hint_prefix = "🐾 ", -- Personnalise le préfixe des indices
+  handler_opts = {
+    border = "rounded" -- Définit la bordure autour de la fenêtre flottante
+  }
+})
 
 -- values shown are defaults and will be used if not provided
 require("gruvbox-material").setup({
@@ -29,3 +40,5 @@ require("gruvbox-material").setup({
   customize = nil, -- customize the theme in any way you desire, see below what this
   -- configuration accepts
 })
+vim.g.autoformat = false -- globally
+vim.b.autoformat = false -- buffer-local
