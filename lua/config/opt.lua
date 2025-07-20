@@ -10,3 +10,4 @@ opt.expandtab = false
 opt.smartindent = true
 opt.autoindent = true
 
+vim.wo.fillchars='eob: '
