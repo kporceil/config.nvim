@@ -1,3 +1,0 @@
-# NVIM
-
-my config
