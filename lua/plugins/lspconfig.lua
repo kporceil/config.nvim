@@ -31,23 +31,18 @@ return {
           },
         },
       },
-
       -- Enable this to enable the builtin LSP inlay hints on Neovim >= 0.10.0
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the inlay hints.
       inlay_hints = {
-        enabled = false,
-        exclude = { "vue" }, -- filetypes for which you don't want to enable inlay hints
+        enabled = true,
+        exclude = { "c" }, -- filetypes for which you don't want to enable inlay hints
       },
       -- Enable this to enable the builtin LSP code lenses on Neovim >= 0.10.0
       -- Be aware that you also will need to properly configure your LSP server to
       -- provide the code lenses.
       codelens = {
         enabled = false,
-      },
-      -- Enable lsp cursor word highlighting
-      document_highlight = {
-        enabled = true,
       },
       -- add any global capabilities here
       capabilities = {
@@ -61,7 +56,6 @@ return {
       -- options for vim.lsp.buf.format
       -- `bufnr` and `filter` is handled by the LazyVim formatter,
       -- but can be also overridden when specified
-      autoformat = false,
       format = {
         formatting_options = nil,
         timeout_ms = nil,
@@ -216,7 +210,7 @@ return {
     local have_mason, mlsp = pcall(require, "mason-lspconfig")
     local all_mslp_servers = {}
     if have_mason then
-      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig.mappings.server").lspconfig_to_package)
+      all_mslp_servers = vim.tbl_keys(require("mason-lspconfig").get_mappings().lspconfig_to_package)
     end
 
     local ensure_installed = {} ---@type string[]

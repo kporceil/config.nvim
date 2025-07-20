@@ -9,27 +9,21 @@ set colorcolumn=80
 set path+=**,/usr/lib/gcc/x86_64-linux-gnu/12/include/,/usr/include,/usr/local/include,/usr/include/x86_64-linux-gnu/,./includes/
 ]])
 require("everforest").setup({
+  italics = false,
+  contrast = "soft",
   background = "soft",
+  comments = { italics = true },
+  transparent_background_level = 0,
+  disable_italic_comments = false,
+  diagnostic_line_highlight = true,
+  diagnostic_text_highlight = true,
+  ui_contrast = "low",
 })
--- values shown are defaults and will be used if not provided
---require("gruvbox-material").setup({
---  italics = false, -- enable italics in general
---  contrast = "hard", -- set contrast, can be any of "hard", "medium", "soft"
---  comments = {
---    italics = true, -- enable italic comments
---  },
---  background = {
---    transparent = false, -- set the background to transparent
---  },
---  float = {
---    force_background = false, -- force background on floats even when background.transparent is set
---    background_color = nil, -- set color for float backgrounds. If nil, uses the default color set
---    -- by the color scheme
---  },
---  signs = {
---    highlight = true, -- whether to highlight signs
---  },
---  customize = nil, -- customize the theme in any way you desire, see below what this
---})
 vim.g.autoformat = false -- globally
 vim.b.autoformat = false -- buffer-local
+vim.keymap.set('n', '<leader>ga', function()
+  local file = vim.fn.expand('%')
+  vim.cmd('!git add ' .. file)
+end, { desc = "Git add current file" })
+vim.api.nvim_set_keymap("n", "gD", "<cmd>lua vim.lsp.buf.declaration()<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "gd", "<cmd>lua vim.lsp.buf.definition()<CR>", { noremap = true, silent = true })
